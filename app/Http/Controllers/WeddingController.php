@@ -10,9 +10,7 @@ class WeddingController extends Controller
         return view('wedding');
     }
     
-    public function dikanova($guestName = "Abdi & Nisa") {
-        // return "ini dika nova";
-        // return view('wedding.dika-nova.index', ['guestName' => '$guestName]);
+    public function dikanova($guestName = "Tuan & Nyonya") {
         return view('wedding.dika-nova.index', ['guestName' => $guestName]);
     }
 }
