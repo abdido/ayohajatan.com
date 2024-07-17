@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AqiqahController;
-use App\Http\Controllers\KhitanController;
+use App\Http\Controllers\KhitanController; 
 use App\Http\Controllers\UltahController;
 use App\Http\Controllers\WeddingController;
 
