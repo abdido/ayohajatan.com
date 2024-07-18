@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">@yield('title')</a>
+    <a class="navbar-brand mx-auto" href="#" style="font-family: 'helvetica'">ayohajatan.com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +22,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="https://wa.me/6285155308088?text=Halo, Saya tertarik dengan undangan anda">Hubungi Kami</a>
         </li>
       </ul>
     </div>

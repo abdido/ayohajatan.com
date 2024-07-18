@@ -1,0 +1,69 @@
+body {
+    min-height: 2000px;
+
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .navbar {
+    min-height: 82px
+  }
+
+  .jumbotron {
+    max-width: 100%;
+    margin-top: 82px;
+    background-size: cover;
+    filter: brightness(70%) contrast(70%);
+    background-position: center;
+    height: calc(80vh - 82px);
+    color: white;
+    padding: 0;
+  }
+
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 0;
+    width: 100%;
+    color: white;
+  }
+
+  .image-container {
+        position: relative;
+        height: calc(80vh - 82px); /* Sesuaikan lebar sesuai gambar Anda */
+        overflow: hidden; /* Memastikan lapisan overlay tidak terlihat di luar container */
+        padding: 0;
+        max-width: 100%;
+    }
+
+  .image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        height: calc(80vh - 82px);
+        background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity 0.5 */
+        z-index: 1; /* Mengatur lapisan di atas gambar */
+        padding: 0;
+    }
+
+    .image-container img {
+        display: block;
+        /* height: calc(80vh - 82px); */
+        max-width: 100%;
+        height: auto;
+        z-index: 0; /* Memastikan gambar berada di bawah lapisan overlay */
+    }
+
+
+
+  .feature {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    margin: 10px;
+  }
