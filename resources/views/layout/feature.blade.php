@@ -1,7 +1,7 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="mt-5 text-left">Fitur Undangan Digital</h2>
+            <h2 class="mt-5 text-left">Fitur AyoHajatan</h2>
         </div>
     </div>
     <div class="row">

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dhika & Nofa Wedding</title>
+  <title>@yield('title')</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -35,12 +35,12 @@
       <div class="simply-countdown"></div>
       <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
     </main>
-
   </section>
 
+  {{-- not needed right now --}}
   <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
     <div class="container">
-      <a class="navbar-brand" href="#">Dino</a>
+      <a class="navbar-brand" href="#">AyoHajatan</a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -68,10 +68,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-          <h2>Acara Pernikahan</h2>
-          <h3>Diselenggarakan pada 20 November 2023 di Bandung, Jawa Barat.</h3>
-          <p>Oleh karena itu, d engan segala hormat, kami bermaksud untuk mengundang Bapak/Ibu, Saudara/i, untuk hadir
-            pada acara pernikahan kami. </p>
+          @yield('weddingDate')
         </div>
       </div>
 
@@ -79,13 +76,10 @@
         <div class="col-lg-6">
           <div class="row">
             <div class="col-8 text-end">
-              <h3>Sandhika Galih</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque praesentium aut ipsa perferendis,
-                incidunt soluta?</p>
-              <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
+              @yield('Groom')
             </div>
             <div class="col-4">
-              <img src="{{asset('wedding/dika-nova/img/sandhika.png')}}" alt="Sandhika Galih" class="img-responsive rounded-circle">
+              @yield('GroomPhoto')
             </div>
           </div>
         </div>
@@ -95,13 +89,10 @@
         <div class="col-lg-6">
           <div class="row">
             <div class="col-4">
-              <img src="{{asset('wedding/dika-nova/img/nofa.png')}}" alt="Nofariza" class="img-responsive rounded-circle">
+              @yield('BridePhoto')
             </div>
             <div class="col-8">
-              <h3>Nofariza</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque praesentium aut ipsa perferendis,
-                incidunt soluta?</p>
-              <p>Putra dari Bpk. Ipsum <br> dan <br> Ibu Lorem</p>
+              @yield('Bride')
             </div>
           </div>
         </div>
@@ -115,176 +106,31 @@
       <div class="row justify-content-center">
         <div class="col-md-8 col-10 text-center">
           <h2>Informasi Acara</h2>
-          <p class="alamat">Alamat: Gedung Kologdam, Kodiklat TNI AD. <br> Jl. Aceh, Merdeka, Kec. Sumur Bandung, Kota
-            Bandung</p>
-
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.359732941108!2d107.616864!3d-6.9097349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e635c9284fc1%3A0x268bddf9bd0971c0!2sKologdam!5e0!3m2!1sen!2ssg!4v1693486483694!5m2!1sen!2ssg"
-            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-          <a href="https://goo.gl/maps/R9seweCadg9MNyox5" target="_blank" class="btn btn-light btn-sm my-3">Klik untuk
-            membuka peta</a>
+          @yield('locationInfo')
           <p class="description">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di tujuan namun tidak
             ada tanda-tanda sedang dilangsungkan pernikahan, boleh jadi Anda salah jadwal, atau salah tempat.</p>
         </div>
       </div>
 
       <div class="row justify-content-center mt-4">
-        <div class="col-md-5 col-10">
-          <div class="card text-center text-bg-light mb-5">
-            <div class="card-header">Akad Nikah</div>
-            <div class="card-body">
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <i class="bi bi-clock d-block"></i>
-                  <span>08.00 - 10.00</span>
-                </div>
-                <div class="col-md-6">
-                  <i class="bi bi-calendar3 d-block"></i>
-                  <span>Minggu, 20 November 2023</span>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan kekhusyuan seluruh prosesi.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5 col-10">
-          <div class="card text-center text-bg-light">
-            <div class="card-header">Resepsi</div>
-            <div class="card-body">
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <i class="bi bi-clock d-block"></i>
-                  <span>11.00 - selesai</span>
-                </div>
-                <div class="col-md-6">
-                  <i class="bi bi-calendar3 d-block"></i>
-                  <span>Minggu, 20 November 2023</span>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan kekhusyuan seluruh prosesi.
-            </div>
-          </div>
-        </div>
+        @yield('akadNikah')
+        @yield('resepsi')
       </div>
     </div>
   </section>
 
   <section id="story" class="story">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-10 text-center">
-          <span>Bagaimana Cinta Kami Bersemi</span>
-          <h2>Cerita Kami</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, similique non soluta nulla asperiores
-            voluptatem.</p>
-        </div>
-      </div>
+      @yield('storyintro')
 
       <div class="row">
-        <div class="col">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image" style="background-image: url({{asset('wedding/dika-nova/img/sman23.jpg')}});"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h3>Pertama Bertemu</h3>
-                  <span>1 Juni 2000</span>
-                </div>
-                <div class="timeline-body">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, modi autem? Commodi autem quo quia?
-                  </p>
-                </div>
-              </div>
-
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image" style="background-image: url(https://picsum.photos/300/300);"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h3>Mulai Serius</h3>
-                  <span>1 Januari 2005</span>
-                </div>
-                <div class="timeline-body">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto enim eaque obcaecati odit
-                    itaque explicabo quisquam quos at.
-                  </p>
-                </div>
-              </div>
-
-            </li>
-            <li>
-              <div class="timeline-image" style="background-image: url(https://picsum.photos/301/301);"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h3>Tunangan</h3>
-                  <span>7 November 2009</span>
-                </div>
-                <div class="timeline-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, deleniti distinctio. Esse quas sit
-                  explicabo corporis magni qui expedita a.
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        @yield('story')
       </div>
     </div>
   </section>
 
   <section id="gallery" class="gallery">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-10 text-center">
-          <span>Memori Kisah Kami</span>
-          <h2>Galeri Foto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, itaque?</p>
-        </div>
-      </div>
-
-      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-        <div class="col mt-3">
-          <a href="{{asset('wedding/dika-nova/img/gallery/1.png')}}" data-toggle="lightbox" data-caption="Sandhika & Nofa 1" data-gallery="mygallery">
-            <img src="{{asset('wedding/dika-nova/img/gallery/1.png')}}" alt="Sandhika & Nofa 1" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-        <div class="col mt-3">
-          <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="Sandhika & Nofa 2"
-            data-gallery="mygallery">
-            <img src="https://picsum.photos/id/300/300/400" alt="Sandhika & Nofa 2" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-        <div class="col mt-3">
-          <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox" data-caption="Sandhika & Nofa 3"
-            data-gallery="mygallery">
-            <img src="https://picsum.photos/id/301/300/400" alt="Sandhika & Nofa 3" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-        <div class="col mt-3">
-          <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox" data-caption="Sandhika & Nofa 4"
-            data-gallery="mygallery">
-            <img src="https://picsum.photos/id/302/300/400" alt="Sandhika & Nofa 4" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-        <div class="col mt-3">
-          <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox" data-caption="Sandhika & Nofa 5"
-            data-gallery="mygallery">
-            <img src="https://picsum.photos/id/304/300/400" alt="Sandhika & Nofa 5" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-        <div class="col mt-3">
-          <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox" data-caption="Sandhika & Nofa 6"
-            data-gallery="mygallery">
-            <img src="https://picsum.photos/id/305/300/400" alt="Sandhika & Nofa 6" class="img-fluid w-100 rounded">
-          </a>
-        </div>
-      </div>
-    </div>
+    @yield('gallery')
   </section>
 
   <section id="rsvp" class="rsvp">
