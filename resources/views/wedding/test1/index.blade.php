@@ -146,6 +146,19 @@
           </div>
         </div>
       </li>
+      <li class="timeline-inverted"> 
+        <div class="timeline-image" style="background-image: url(https://picsum.photos/301/301);"></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h3>test</h3>
+            <span>7 November 2009</span>
+          </div>
+          <div class="timeline-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, deleniti distinctio. Esse quas sit
+            explicabo corporis magni qui expedita a.
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
   @endsection
@@ -198,4 +211,13 @@
         </div>
       </div>
     </div>
+  @endsection
+
+  @section('rsvpForm')
+
+  <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
+  action="wedding/test/v1/rsvp"
+  id="my-form">
+  @csrf
+
   @endsection

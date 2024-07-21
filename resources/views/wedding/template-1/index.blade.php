@@ -25,6 +25,12 @@
 </head>
 
 <body>
+<form action="/wedding/test/v2/rsvp" method="POST">
+  @csrf
+  <button>
+    <input type="submit">
+  </button>
+</form>
 
   <section id="hero"
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
@@ -142,39 +148,35 @@
         </div>
       </div>
 
-      <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-        action="https://script.google.com/macros/s/AKfycbyddFbEJRqwEeA6OmZAuNf0jw_B30ZUOS5qSDwlAKV_nurcW7H6osJx2ZWnIeTmPm_35g/exec"
-        id="my-form">
+      @yield('rsvpForm')
         <div class="col-12">
           <div class="mb-3">
-            <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama">
+            <label for="nama_tamu" class="form-label">Nama Tamu</label>
+            <input type="text" class="form-control" id="guest_name" name="guest_name">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+            <label for="jumlah_kehadiran" class="form-label">Jumlah Kehadiran</label>
+            <input type="number" class="form-control" id="participants" name="participants" min="1" max="5" value="1">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label for="status" class="form-label">Konfirmasi</label>
-            <select name="status" id="status" class="form-select">
+            <label for="konfirmasi_kehadiran" class="form-label">Konfirmasi Kehadiran</label>
+            <select name="attendance" id="attendance" class="form-select">
               <option selected>Pilih salah satu</option>
-              <option value="Hadir">Hadir</option>
-              <option value="Tidak Hadir">Tidak Hadir</option>
+              <option value="1">Hadir</option>
+              <option value="0">Tidak Hadir</option>
             </select>
           </div>
         </div>
-        <div class="col-12" style="margin-top: 35px;">
-          <button class="btn btn-primary">Kirim</button>
-        </div>
-      </form>
-
-      <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-          <div id="disqus_thread"></div>
+        <script>
+          function test() {alert("Konfirmasi kehadiran berhasil");}
+        </script>
+            <button type="submit" class="btn btn-primary" onclick="test()">Kirim</button>
+          </form>
+          {{-- <div id="disqus_thread"></div> --}}
           <script>
             /**
             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

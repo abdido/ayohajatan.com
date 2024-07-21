@@ -50,7 +50,12 @@ Route::group(['prefix' => 'wedding'], function () {
     Route::get('/template2/{guestName?}', [WeddingController::class, 'template2']);
     Route::get('/template3/{guestName?}', [WeddingController::class, 'template3']);
     Route::get('/template4/{guestName?}', [WeddingController::class, 'template4']);
+    // Test Wedding Invitation Route
     Route::get('/test/{guestName?}', [WeddingController::class, 'test']);
+    Route::post('/test/v1/rsvp', [WeddingController::class, 'testConfirm']);
+    Route::post('/test/v2/rsvp', [WeddingController::class, 'testConfirmV2']);
+
+
     // Wedding Invitation List
     Route::get('/dikanova/{guestName?}', [WeddingController::class, 'dikanova']);
 });
