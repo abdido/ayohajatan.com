@@ -9,8 +9,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+          </div>
+        </div>
+
+        <form method="POST"
+    action="{{ url('wedding/confirm/v1') }}"
+    id="my-form">
+      @csrf
+      <div class="row row-cols-md-auto h-3 align-items-center justify-content-center">
+      <div class="col-12">
+          <div class="mb-3">
+              <label for="guest_name" class="form-label">Nama Tamu</label>
+              <input type="text" class="form-control" id="guest_name" name="guest_name">
+          </div>
+      </div>
+      <div class="col-12">
+          <div class="mb-3">
+              <label for="participants" class="form-label">Jumlah Kehadiran</label>
+              <input type="number" class="form-control" id="participants" name="participants" min="1" max="5" value="1">
+          </div>
+      </div>
+      <div class="col-12">
+          <div class="mb-3">
+              <label for="attendance" class="form-label">Konfirmasi Kehadiran</label>
+              <select name="attendance" id="attendance" class="form-select">
+                  <option selected disabled>Pilih salah satu</option>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak Hadir</option>
+              </select>
+          </div>
+      </div>
+    </div>
+    <div class="row row-cols-md-auto align-items-center justify-content-center">
+      <div class="col-12">
+        <div class="mb-8">
+          <label for="message" class="form-label">Pesan</label>
+          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+      <button type="submit" class="btn btn-primary">Kirim</button>
+  </form> 
+    
+      </div>
+    </section>
+    
+    
+    
     <!-- NAVBAR -->
-    @include('layout.navbar')
+    {{-- @include('layout.navbar') --}}
     <!-- END NAVBAR -->
 
     <!-- Jumbotron -->

@@ -215,9 +215,5 @@
 
   @section('rsvpForm')
 
-  <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-  action="wedding/test/v1/rsvp"
-  id="my-form">
-  @csrf
 
   @endsection

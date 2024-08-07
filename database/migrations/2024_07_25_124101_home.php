@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('weddings', function (Blueprint $table) {
+        Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->string('cust_name');
             $table->string('guest_name');
@@ -22,11 +22,11 @@ return new class extends Migration
         });
 
         // Drop the table if it already exists
-        // Schema::dropIfExists('weddings');
+        // Schema::dropIfExists('homes');
 
         // // Drop a column if it already exists
-        // if (Schema::hasColumn('weddings', 'column_name')) {
-        //     Schema::table('weddings', function (Blueprint $table) {
+        // if (Schema::hasColumn('homes', 'column_name')) {
+        //     Schema::table('homes', function (Blueprint $table) {
         //         $table->dropColumn('column_name');
         //     });
         // }

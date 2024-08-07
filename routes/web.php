@@ -10,6 +10,7 @@ use App\Http\Controllers\WeddingController;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/home', [HomeController::class, 'testSendDataToSQLite']);
 
 
 #create Aqiqah route in group of Aqiqah
@@ -52,8 +53,7 @@ Route::group(['prefix' => 'wedding'], function () {
     Route::get('/template4/{guestName?}', [WeddingController::class, 'template4']);
     // Test Wedding Invitation Route
     Route::get('/test/{guestName?}', [WeddingController::class, 'test']);
-    Route::post('/test/v1/rsvp', [WeddingController::class, 'testConfirm']);
-    Route::post('/test/v2/rsvp', [WeddingController::class, 'testConfirmV2']);
+    Route::post('/confirm/v1', [WeddingController::class, 'testConfirm']);
 
 
     // Wedding Invitation List

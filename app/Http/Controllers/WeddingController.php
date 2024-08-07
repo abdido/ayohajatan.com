@@ -22,60 +22,37 @@ class WeddingController extends Controller
     }
 
     public function testConfirm(Request $request) {
-        dd($request->all());
-        $data = $request->all();
-        // dd($data);
-        // Validate the request data
-
-        // Create a new record in the weddings table
-        $wedding = Wedding::create([
-            'cust_name' => 'test',
-            'guest_name' => $validatedData['guest_name'],
-            'participants' => $validatedData['participants'],
-            'attendance' => $validatedData['attendance'],
-            'created_at' => now(),
-            'updated_at' => now(),
-            // Add more fields as needed
-        ]);
-        
-        // Save the changes to the database
-        $wedding->save();
-
-        // Redirect to a success page or return a response
-        // return redirect()->route('/');
-        return back()->with('success', 'Data has been saved successfully!');
-    }
-
-    public function testConfirmV2() {
-        $data = [
-            'guest_name' => 'test',
-            'attendance' => 1,
-            'participants' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        
-        // Create a new record in the weddings table
-        $wedding = Wedding::create([
-            'cust_name' => 'test',
-            'guest_name' => $data['guest_name'],
-            'attendance' => $data['attendance'],
-            'participants' => $data['participants'],
-            'created_at' => $data['created_at'],
-            'updated_at' => $data['updated_at'],
-            // Add more fields as needed
-        ]);
-
-        // dd($wedding);
-        $wedding->save();
-        
-        // Save the changes to the database
-
-        // Redirect to a success page or return a response
-        // return redirect()->route('/test');
-        return back()->with('success', 'Data has been saved successfully!');
-    }
+        // dd($request->all());
+        try {
+            // Validate the request data
+            $validatedData = $request->validate([
+                'guest_name' => 'required|string|max:255',
+                'attendance' => 'required|integer',
+                'message' => 'required|string|max:255',
+                'participants' => 'required|integer',
+            ]);
     
+            // Create a new record in the weddings table
+            $wedding = Wedding::create([
+                'cust_name' => 'test',
+                'guest_name' => $validatedData['guest_name'],
+                'attendance' => $validatedData['attendance'],
+                'message' => $validatedData['message'],
+                'participants' => $validatedData['participants'],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+    
+            // Save the changes to the database
+            $wedding->save();
+    
+            // Redirect to a success page or return a response
+            return back()->with('success', 'Data has been saved successfully!');
+        } catch (\Exception $e) {
+            // Handle error and return a response
+            return back()->with('error', 'There was an error saving the data: ' . $e->getMessage());
+        }
+    }
 
 
 

@@ -149,56 +149,45 @@
       </div>
 
       @yield('rsvpForm')
-        <div class="col-12">
-          <div class="mb-3">
-            <label for="nama_tamu" class="form-label">Nama Tamu</label>
+      <form method="POST"
+  action="{{ url('wedding/confirm/v1') }}"
+  id="my-form">
+    @csrf
+    <div class="row row-cols-md-auto h-3 align-items-center justify-content-center">
+    <div class="col-12">
+        <div class="mb-3">
+            <label for="guest_name" class="form-label">Nama Tamu</label>
             <input type="text" class="form-control" id="guest_name" name="guest_name">
-          </div>
         </div>
-        <div class="col-12">
-          <div class="mb-3">
-            <label for="jumlah_kehadiran" class="form-label">Jumlah Kehadiran</label>
+    </div>
+    <div class="col-12">
+        <div class="mb-3">
+            <label for="participants" class="form-label">Jumlah Kehadiran</label>
             <input type="number" class="form-control" id="participants" name="participants" min="1" max="5" value="1">
-          </div>
         </div>
-        <div class="col-12">
-          <div class="mb-3">
-            <label for="konfirmasi_kehadiran" class="form-label">Konfirmasi Kehadiran</label>
+    </div>
+    <div class="col-12">
+        <div class="mb-3">
+            <label for="attendance" class="form-label">Konfirmasi Kehadiran</label>
             <select name="attendance" id="attendance" class="form-select">
-              <option selected>Pilih salah satu</option>
-              <option value="1">Hadir</option>
-              <option value="0">Tidak Hadir</option>
+                <option selected disabled>Pilih salah satu</option>
+                <option value="1">Hadir</option>
+                <option value="0">Tidak Hadir</option>
             </select>
-          </div>
         </div>
-        <script>
-          function test() {alert("Konfirmasi kehadiran berhasil");}
-        </script>
-            <button type="submit" class="btn btn-primary" onclick="test()">Kirim</button>
-          </form>
-          {{-- <div id="disqus_thread"></div> --}}
-          <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-
-            // var disqus_config = function () {
-            //   this.page.url = 'https://sandhikagalih.me';  // Replace PAGE_URL with your page's canonical URL variable
-            //   this.page.identifier = 'https://sandhikagalih.me'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            // };
-
-          //   (function () { // DON'T EDIT BELOW THIS LINE
-          //     var d = document, s = d.createElement('script');
-          //     s.src = 'https://dino-wedding-1.disqus.com/embed.js';
-          //     s.setAttribute('data-timestamp', +new Date());
-          //     (d.head || d.body).appendChild(s);
-          //   })();
-          // </script>
-          // <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-          //     Disqus.</a></noscript>
-        </div>
+    </div>
+  </div>
+  <div class="row row-cols-md-auto align-items-center justify-content-center">
+    <div class="col-12">
+      <div class="mb-8">
+        <label for="message" class="form-label">Pesan</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
       </div>
-
+    </div>
+  </div>
+    <button type="submit" class="btn btn-primary">Kirim</button>
+</form> 
+  
     </div>
   </section>
 
